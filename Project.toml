@@ -1,0 +1,8 @@
+name = "catgan_flux"
+uuid = "224c5a7b-78dc-4d1f-9a3c-a6367cccecba"
+authors = ["Ralph Kube <ralph_kube@gmx.net>"]
+version = "0.1.0"
+
+[deps]
+Flux = "587475ba-b771-5e3f-ad9e-33799f191a9c"
+MLDatasets = "eb30cadb-4394-5ae3-aed4-317e484a6458"
