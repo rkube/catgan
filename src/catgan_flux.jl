@@ -6,5 +6,7 @@ using Zygote
 using MLDatasets
 
 include("models.jl")
+include("lossfuns.jl")
+include("utils.jl")
 
 end # module
