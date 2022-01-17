@@ -60,7 +60,7 @@ args = parse_args(s)
 for (arg, val) in args
     println("     $arg => $val")
 end
-tb_logger = TBLogger("logs/testlog")
+tb_logger = TBLogger("../logs_scan1/log")
 with_logger(tb_logger) do
     @info "hyperparameters" args
 end
