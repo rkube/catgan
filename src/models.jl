@@ -1,8 +1,6 @@
-
+# Discriminator and Generator models
 
 export get_discriminator, get_discriminator_v2, get_discriminator_v3, get_generator, get_generator_v2, get_generator_v3
-
-leakyrelu02 = Base.Fix2(leakyrelu, 0.2)
 
 function get_discriminator(args)
     mdim = args["mdim"]
