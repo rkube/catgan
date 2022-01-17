@@ -19,11 +19,31 @@ function save_images(x_fake, filename)
     X_cpu = x_fake |> cpu;
     for row in 1:num_rows
        for col in 1:num_cols
-           img_array[(row - 1) * img_width + 1:row * img_height, (col - 1) * img_width + 1: col * img_height] = colorview(RGB, permutedims(X_cpu[:, :, :, (row -1)* 10 + col], (3, 1, 2)))
+           img_array[(row - 1) * img_width + 1:row * img_height, (col - 1) * img_width + 1: col * img_height] = colorview(RGB, permutedims(X_cpu[:, :, :, (row -1)* 10 + col], (3, 2, 1)))
        end
    end
    img_array = map(clamp01nan, img_array)
 
    save(filename, img_array)
-
+   img_array
 end
+
+
+function to_tblogger(x_fake)
+    # Prepares the array x_fake with dims=(WHCB) for logging in tensorboard
+    img_width, img_height, ch, num_images = size(x_fake)
+    # Number of images per row
+    num_rows = 10
+    num_cols = num_images ÷ 10
+    # img_arr will hold the output image
+    img_array = zeros(img_height * num_rows, img_width * num_cols, 3) 
+    # Put the samples, addressed through the last dimension of X_cpu, column-wise into img_arr
+    X_cpu = x_fake |> cpu;
+    for row in 1:num_rows
+       for col in 1:num_cols
+           img_array[(row - 1) * img_width + 1:row * img_height, (col - 1) * img_width + 1: col * img_height, :] = permutedims(X_cpu[:, :, :, (row -1)* 10 + col], (2, 1, 3))
+       end
+   end
+   img_array = map(clamp01nan, img_array)
+end
+

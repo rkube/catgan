@@ -17,6 +17,12 @@ git-tree-sha1 = "af92965fb30777147966f58acb05da51c5616b5f"
 uuid = "79e6a3ab-5dfb-504d-930d-738a2a938a0e"
 version = "3.3.3"
 
+[[ArgParse]]
+deps = ["Logging", "TextWrap"]
+git-tree-sha1 = "3102bce13da501c9104df33549f511cd25264d7d"
+uuid = "c7e460c6-2fb9-53a9-8c5b-16f535851c63"
+version = "1.1.4"
+
 [[ArgTools]]
 uuid = "0dad84c5-d112-42e6-8d28-ef12dabb789f"
 
@@ -90,6 +96,9 @@ version = "1.0.0"
 git-tree-sha1 = "215a9aa4a1f23fbd05b92769fdd62559488d70e9"
 uuid = "fa961155-64e5-5f13-b03f-caf6b980ea82"
 version = "0.4.1"
+
+[[CRC32c]]
+uuid = "8bf52ea8-c179-5cab-976a-9e18b702a9bc"
 
 [[CUDA]]
 deps = ["AbstractFFTs", "Adapt", "BFloat16s", "CEnum", "CompilerSupportLibraries_jll", "ExprTools", "GPUArrays", "GPUCompiler", "LLVM", "LazyArtifacts", "Libdl", "LinearAlgebra", "Logging", "Printf", "Random", "Random123", "RandomNumbers", "Reexport", "Requires", "SparseArrays", "SpecialFunctions", "TimerOutputs"]
@@ -837,6 +846,12 @@ git-tree-sha1 = "afadeba63d90ff223a6a48d2009434ecee2ec9e8"
 uuid = "92933f4c-e287-5a05-a399-4b506db050ca"
 version = "1.7.1"
 
+[[ProtoBuf]]
+deps = ["Logging", "protoc_jll"]
+git-tree-sha1 = "283ac3b9db33300a933a261a16f9aa036d33ac18"
+uuid = "3349acd9-ac6a-5e09-bcdb-63829b23a429"
+version = "0.11.4"
+
 [[QOI]]
 deps = ["ColorTypes", "FileIO", "FixedPointNumbers"]
 git-tree-sha1 = "18e8f4d1426e965c7b532ddd260599e1510d26ce"
@@ -1009,6 +1024,12 @@ uuid = "fa267f1f-6049-4f14-aa54-33bafae1ed76"
 deps = ["ArgTools", "SHA"]
 uuid = "a4e569a6-e804-4fa4-b0f3-eef7a1d5b13e"
 
+[[TensorBoardLogger]]
+deps = ["CRC32c", "FileIO", "ImageCore", "ProtoBuf", "Requires", "StatsBase"]
+git-tree-sha1 = "96d160e85038f6d89e6c9b91492466f9a7d454f2"
+uuid = "899adc3e-224a-11e9-021f-63837185c80f"
+version = "0.1.18"
+
 [[TensorCore]]
 deps = ["LinearAlgebra"]
 git-tree-sha1 = "1feb45f88d133a655e001435632f019a9a1bcdb6"
@@ -1018,6 +1039,11 @@ version = "0.1.1"
 [[Test]]
 deps = ["InteractiveUtils", "Logging", "Random", "Serialization"]
 uuid = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[[TextWrap]]
+git-tree-sha1 = "9250ef9b01b66667380cf3275b3f7488d0e25faf"
+uuid = "b718987f-49a8-5099-9789-dcd902bef87d"
+version = "1.0.1"
 
 [[TiffImages]]
 deps = ["ColorTypes", "DataStructures", "DocStringExtensions", "FileIO", "FixedPointNumbers", "IndirectArrays", "Inflate", "OffsetArrays", "PkgVersion", "ProgressMeter", "UUIDs"]
@@ -1124,3 +1150,9 @@ uuid = "8e850ede-7688-5339-a07c-302acd2aaf8d"
 [[p7zip_jll]]
 deps = ["Artifacts", "Libdl"]
 uuid = "3f19e933-33d8-53b3-aaab-bd5110c3b7a0"
+
+[[protoc_jll]]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
+git-tree-sha1 = "88665e826eb24ea20e2413c9212889f1e530efbd"
+uuid = "c7845625-083e-5bbe-8504-b32d602b7110"
+version = "3.19.1+0"
